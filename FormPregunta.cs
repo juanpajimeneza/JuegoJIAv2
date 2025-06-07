@@ -51,7 +51,7 @@ namespace JuegoJIAv2
             // Ocultar opciones no utilizadas
             for (int i = preguntaActual.Opciones.Count; i < 4; i++)
             {
-                RadioButton rb =(RadioButton)pnlOpciones.Controls[$"rbOpcion{i + 1}"];
+                RadioButton rb = (RadioButton)pnlOpciones.Controls[$"rbOpcion{i + 1}"];
                 rb.Visible = false;
             }
 
@@ -80,7 +80,7 @@ namespace JuegoJIAv2
             }
 
             // Verificar la respuesta
-            bool esCorrecta =juego.VerificarRespuesta(indiceRespuesta);
+            bool esCorrecta = juego.VerificarRespuesta(indiceRespuesta);
 
             // Mostrar retroalimentación
             string mensaje = esCorrecta ? "¡Correcto! +10 puntos" :
@@ -103,13 +103,13 @@ namespace JuegoJIAv2
 
         }
         private void MostrarResultados()
-        { 
+        {
             // Abrir el formulario de resultados
             FormResultados formResultados = new FormResultados(juego);
             formResultados.Show();
             this.Hide();
         }
-        private void FormPregunta_FormClosed(object sender,FormClosedEventArgs e)
+        private void FormPregunta_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
