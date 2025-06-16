@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace JuegoJIAv2
 {
@@ -25,7 +26,7 @@ namespace JuegoJIAv2
             lblNombre.Text = $"Jugador: {resultados[0]}";
             lblMateria.Text = $"Materia: {resultados[1]}";
             lblPuntaje.Text = $"Puntaje final: {resultados[2]}/100";
-            lblRespuestasCorrectas.Text = $"Respuestas correctas:{ int.Parse(resultados[2]) / 10}/ 10";
+            lblRespuestasCorrectas.Text = $"Respuestas correctas:{int.Parse(resultados[2]) / 10}/ 10";
             lblResultado.Text = resultados[3];
 
             // Cambiar el color según el resultado
@@ -55,6 +56,22 @@ namespace JuegoJIAv2
         private void FormResultados_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnJugarDeNuevo_Click_1(object sender, EventArgs e)
+        {
+            juego.Iniciar(juego.JugadorActual.Nombre);
+            // Abrir el formulario de selección de materia
+            // Abrir el formulario de preguntas
+            FormSeleccionMateria formSeleccion = new
+            FormSeleccionMateria(juego);
+            formSeleccion.Show();
+            this.Hide();
         }
     }
 }

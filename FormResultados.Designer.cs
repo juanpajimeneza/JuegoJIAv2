@@ -36,12 +36,14 @@
             lblResultado = new Label();
             btnJugarDeNuevo = new Button();
             btnSalir = new Button();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(117, 50);
+            lblTitulo.Location = new Point(86, 16);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(78, 32);
             lblTitulo.TabIndex = 0;
@@ -50,7 +52,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(117, 92);
+            lblNombre.Location = new Point(86, 58);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(78, 32);
             lblNombre.TabIndex = 1;
@@ -59,7 +61,7 @@
             // lblMateria
             // 
             lblMateria.AutoSize = true;
-            lblMateria.Location = new Point(117, 124);
+            lblMateria.Location = new Point(86, 90);
             lblMateria.Name = "lblMateria";
             lblMateria.Size = new Size(78, 32);
             lblMateria.TabIndex = 2;
@@ -68,7 +70,7 @@
             // lblPuntaje
             // 
             lblPuntaje.AutoSize = true;
-            lblPuntaje.Location = new Point(117, 156);
+            lblPuntaje.Location = new Point(86, 122);
             lblPuntaje.Name = "lblPuntaje";
             lblPuntaje.Size = new Size(78, 32);
             lblPuntaje.TabIndex = 3;
@@ -77,7 +79,7 @@
             // lblRespuestasCorrectas
             // 
             lblRespuestasCorrectas.AutoSize = true;
-            lblRespuestasCorrectas.Location = new Point(117, 188);
+            lblRespuestasCorrectas.Location = new Point(86, 154);
             lblRespuestasCorrectas.Name = "lblRespuestasCorrectas";
             lblRespuestasCorrectas.Size = new Size(78, 32);
             lblRespuestasCorrectas.TabIndex = 4;
@@ -86,7 +88,7 @@
             // lblResultado
             // 
             lblResultado.AutoSize = true;
-            lblResultado.Location = new Point(117, 220);
+            lblResultado.Location = new Point(86, 186);
             lblResultado.Name = "lblResultado";
             lblResultado.Size = new Size(78, 32);
             lblResultado.TabIndex = 5;
@@ -94,39 +96,51 @@
             // 
             // btnJugarDeNuevo
             // 
-            btnJugarDeNuevo.Location = new Point(207, 306);
+            btnJugarDeNuevo.Location = new Point(444, 499);
             btnJugarDeNuevo.Name = "btnJugarDeNuevo";
-            btnJugarDeNuevo.Size = new Size(114, 46);
+            btnJugarDeNuevo.Size = new Size(228, 46);
             btnJugarDeNuevo.TabIndex = 6;
-            btnJugarDeNuevo.Text = "button1";
+            btnJugarDeNuevo.Text = "Jugar de nuevo";
             btnJugarDeNuevo.UseVisualStyleBackColor = true;
+            btnJugarDeNuevo.Click += btnJugarDeNuevo_Click_1;
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(353, 306);
+            btnSalir.Location = new Point(704, 499);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(114, 46);
             btnSalir.TabIndex = 7;
-            btnSalir.Text = "button2";
+            btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click_1;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(lblTitulo);
+            panel1.Controls.Add(btnSalir);
+            panel1.Controls.Add(btnJugarDeNuevo);
+            panel1.Controls.Add(lblNombre);
+            panel1.Controls.Add(lblMateria);
+            panel1.Controls.Add(lblResultado);
+            panel1.Controls.Add(lblPuntaje);
+            panel1.Controls.Add(lblRespuestasCorrectas);
+            panel1.Location = new Point(155, 32);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1351, 570);
+            panel1.TabIndex = 8;
             // 
             // FormResultados
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnSalir);
-            Controls.Add(btnJugarDeNuevo);
-            Controls.Add(lblResultado);
-            Controls.Add(lblRespuestasCorrectas);
-            Controls.Add(lblPuntaje);
-            Controls.Add(lblMateria);
-            Controls.Add(lblNombre);
-            Controls.Add(lblTitulo);
+            ClientSize = new Size(1588, 690);
+            Controls.Add(panel1);
             Name = "FormResultados";
             Text = "Resultados";
+            WindowState = FormWindowState.Maximized;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -139,5 +153,6 @@
         private Label lblResultado;
         private Button btnJugarDeNuevo;
         private Button btnSalir;
+        private Panel panel1;
     }
 }

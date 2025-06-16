@@ -31,5 +31,44 @@ namespace JuegoJIAv2
             formSeleccion.Show();
             this.Hide();
         }
+
+        private void FormBienvenida_Load(object sender, EventArgs e)
+        {
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+            lblTitulo.Left = (formWidth / 2) - (lblTitulo.Width / 2);
+            lblTitulo.Top = formHeight / 4;
+
+            lblNombre.Left = (formWidth / 2) - (lblNombre.Width / 2);
+            lblNombre.Top = (formHeight / 4) + lblTitulo.Height + 20;
+
+            txtNombre.Left = (formWidth / 2) - (txtNombre.Width / 2);
+            txtNombre.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lblNombre.Height + 20);
+
+            btnComenzar.Left = (formWidth / 2) - (btnComenzar.Width / 2);
+            btnComenzar.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lblNombre.Height + 20 + txtNombre.Height + 20);
+        }
+
+        private void FormBienvenida_ClientSizeChanged(object sender, EventArgs e)
+        {
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+            lblTitulo.Left = (formWidth / 2) - (lblTitulo.Width / 2);
+            lblTitulo.Top = formHeight / 4;
+
+            lblNombre.Left = (formWidth / 2) - (lblNombre.Width / 2);
+            lblNombre.Top = (formHeight / 4) + lblTitulo.Height + 20;
+
+            txtNombre.Left = (formWidth / 2) - (txtNombre.Width / 2);
+            txtNombre.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lblNombre.Height + 20);
+
+            btnComenzar.Left = (formWidth / 2) - (btnComenzar.Width / 2);
+            btnComenzar.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lblNombre.Height + 20 + txtNombre.Height + 20);
+        }
+
+        private void FormBienvenida_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

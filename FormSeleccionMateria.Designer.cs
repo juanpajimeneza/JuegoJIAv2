@@ -48,12 +48,13 @@
             lstMaterias.FormattingEnabled = true;
             lstMaterias.Location = new Point(163, 96);
             lstMaterias.Name = "lstMaterias";
-            lstMaterias.Size = new Size(240, 164);
+            lstMaterias.SelectionMode = SelectionMode.MultiSimple;
+            lstMaterias.Size = new Size(1132, 388);
             lstMaterias.TabIndex = 1;
             // 
             // button1
             // 
-            button1.Location = new Point(325, 364);
+            button1.Location = new Point(601, 654);
             button1.Name = "button1";
             button1.Size = new Size(150, 46);
             button1.TabIndex = 2;
@@ -65,12 +66,16 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1410, 756);
             Controls.Add(button1);
             Controls.Add(lstMaterias);
             Controls.Add(lblTitulo);
             Name = "FormSeleccionMateria";
             Text = "Seleccion de Materia";
+            WindowState = FormWindowState.Maximized;
+            FormClosed += FormSeleccionMateria_FormClosed_1;
+            Load += FormSeleccionMateria_Load;
+            ClientSizeChanged += FormSeleccionMateria_ClientSizeChanged;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -113,5 +113,27 @@ namespace JuegoJIAv2
         {
             Application.Exit();
         }
+
+        private void FormPregunta_Load(object sender, EventArgs e)
+        {
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+            lblContador.Left = (formWidth / 2) - (lblContador.Width / 2);
+            lblContador.Top = formHeight / 4;
+
+            lblPregunta.Left = (formWidth / 2) - (lblPregunta.Width / 2);
+            lblPregunta.Top = (formHeight / 4) + lblContador.Height + 20;
+
+            pnlOpciones.Left = (formWidth / 2) - (pnlOpciones.Width / 2);
+            pnlOpciones.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20);
+
+            btnConfirmar.Left = (formWidth / 2) - (btnConfirmar.Width / 2);
+            btnConfirmar.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20 + pnlOpciones.Height + 20);
+        }
+
+        private void FormPregunta_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

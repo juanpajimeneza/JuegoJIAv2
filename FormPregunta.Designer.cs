@@ -103,7 +103,7 @@
             // 
             // btnConfirmar
             // 
-            btnConfirmar.Location = new Point(369, 406);
+            btnConfirmar.Location = new Point(541, 496);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new Size(150, 46);
             btnConfirmar.TabIndex = 6;
@@ -119,20 +119,23 @@
             pnlOpciones.Controls.Add(rbOpcion3);
             pnlOpciones.Location = new Point(191, 210);
             pnlOpciones.Name = "pnlOpciones";
-            pnlOpciones.Size = new Size(400, 200);
+            pnlOpciones.Size = new Size(1082, 200);
             pnlOpciones.TabIndex = 7;
             // 
             // FormPregunta
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1342, 608);
             Controls.Add(pnlOpciones);
             Controls.Add(btnConfirmar);
             Controls.Add(lblPregunta);
             Controls.Add(lblContador);
             Name = "FormPregunta";
             Text = "FormPregunta";
+            WindowState = FormWindowState.Maximized;
+            FormClosed += FormPregunta_FormClosed_1;
+            Load += FormPregunta_Load;
             pnlOpciones.ResumeLayout(false);
             pnlOpciones.PerformLayout();
             ResumeLayout(false);

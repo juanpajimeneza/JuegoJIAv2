@@ -36,12 +36,14 @@
             // 
             // lblTitulo
             // 
+            lblTitulo.Anchor = AnchorStyles.None;
             lblTitulo.AutoSize = true;
             lblTitulo.Location = new Point(351, 74);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(354, 32);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "¡Bienvenido al Juego Educativo!";
+            lblTitulo.TextAlign = ContentAlignment.TopCenter;
             // 
             // btnComenzar
             // 
@@ -49,7 +51,7 @@
             btnComenzar.Name = "btnComenzar";
             btnComenzar.Size = new Size(150, 46);
             btnComenzar.TabIndex = 1;
-            btnComenzar.Text = "button1";
+            btnComenzar.Text = "Continuar";
             btnComenzar.UseVisualStyleBackColor = true;
             btnComenzar.Click += btnComenzar_Click;
             // 
@@ -57,7 +59,7 @@
             // 
             txtNombre.Location = new Point(303, 298);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(200, 39);
+            txtNombre.Size = new Size(600, 39);
             txtNombre.TabIndex = 2;
             // 
             // lblNombre
@@ -73,13 +75,18 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1556, 746);
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
             Controls.Add(btnComenzar);
             Controls.Add(lblTitulo);
             Name = "FormBienvenida";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Bienvenida";
+            WindowState = FormWindowState.Maximized;
+            FormClosed += FormBienvenida_FormClosed;
+            Load += FormBienvenida_Load;
+            ClientSizeChanged += FormBienvenida_ClientSizeChanged;
             ResumeLayout(false);
             PerformLayout();
         }
