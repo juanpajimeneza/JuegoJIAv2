@@ -100,8 +100,7 @@ namespace JuegoJIAv2
             resultados[1] =
             JugadorActual.MateriaSeleccionada[0].Nombre;
             resultados[2] = JugadorActual.Puntaje.ToString();
-            resultados[3] = (JugadorActual.Puntaje >= 750) ?
-            "¡Aprobado! " : "No aprobado. ¡Sigue estudiando! ";
+            resultados[3] = (JugadorActual.Puntaje >= 70) ? "¡Aprobado! " : "No aprobado. ¡Sigue estudiando! ";
             return resultados;
         }
 
