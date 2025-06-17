@@ -61,7 +61,7 @@ namespace JuegoJIAv2
             // Abrir el formulario de preguntas
             FormPregunta formPregunta = new FormPregunta(juego);
             formPregunta.Show();
-            this.Hide(); 
+            this.Hide();
         }
 
         private void FormSeleccionMateria_FormClosed(object sender, FormClosedEventArgs e)
@@ -84,8 +84,11 @@ namespace JuegoJIAv2
             lstMaterias.Left = (formWidth / 2) - (lstMaterias.Width / 2);
             lstMaterias.Top = (formHeight / 4) + lblTitulo.Height + 20;
 
+            lblnota.Left = (formWidth / 2) - (lblnota.Width / 2);
+            lblnota.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lstMaterias.Height + 20);
+
             button1.Left = (formWidth / 2) - (button1.Width / 2);
-            button1.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lstMaterias.Height + 20);
+            button1.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lstMaterias.Height + 20 + lblnota.Height + 20);
 
         }
 
@@ -99,14 +102,22 @@ namespace JuegoJIAv2
             lstMaterias.Left = (formWidth / 2) - (lstMaterias.Width / 2);
             lstMaterias.Top = (formHeight / 4) + lblTitulo.Height + 20;
 
+            lblnota.Left = (formWidth / 2) - (lblnota.Width / 2);
+            lblnota.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lstMaterias.Height + 20);
+
             button1.Left = (formWidth / 2) - (button1.Width / 2);
-            button1.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lstMaterias.Height + 20);
+            button1.Top = (formHeight / 4) + (lblTitulo.Height + 20 + lstMaterias.Height + 20 + lblnota.Height + 20);
 
         }
 
         private void FormSeleccionMateria_FormClosed_1(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 

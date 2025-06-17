@@ -31,6 +31,7 @@
             lblTitulo = new Label();
             lstMaterias = new ListBox();
             button1 = new Button();
+            lblnota = new Label();
             SuspendLayout();
             // 
             // lblTitulo
@@ -62,11 +63,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // lblnota
+            // 
+            lblnota.AutoSize = true;
+            lblnota.Location = new Point(165, 512);
+            lblnota.Name = "lblnota";
+            lblnota.Size = new Size(523, 32);
+            lblnota.TabIndex = 3;
+            lblnota.Text = "Puntaje minimo es 750 (cada materia te da 100)";
+            lblnota.Click += label1_Click_1;
+            // 
             // FormSeleccionMateria
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1410, 756);
+            Controls.Add(lblnota);
             Controls.Add(button1);
             Controls.Add(lstMaterias);
             Controls.Add(lblTitulo);
@@ -85,5 +97,6 @@
         private Label lblTitulo;
         private ListBox lstMaterias;
         private Button button1;
+        private Label lblnota;
     }
 }

@@ -147,6 +147,7 @@
             WindowState = FormWindowState.Maximized;
             FormClosed += FormPregunta_FormClosed_1;
             Load += FormPregunta_Load;
+            ClientSizeChanged += FormPregunta_ClientSizeChanged;
             pnlOpciones.ResumeLayout(false);
             pnlOpciones.PerformLayout();
             ResumeLayout(false);
