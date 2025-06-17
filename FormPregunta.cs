@@ -30,6 +30,7 @@ namespace JuegoJIAv2
                 MostrarResultados();
                 return;
             }
+            lblmateria.Text = juego.JugadorActual.MateriaSeleccionada[juego.JugadorActual.indiceMateria].Nombre;
             // Actualizar el contador de preguntas
             lblContador.Text = $"Pregunta {juego.PreguntaActualIndex + 1}/10";
 
@@ -104,11 +105,21 @@ namespace JuegoJIAv2
         }
         private void MostrarResultados()
         {
-            // Abrir el formulario de resultados
-            FormResultados formResultados = new FormResultados(juego);
-            formResultados.Show();
-            this.Hide();
+            // Intentar avanzar a la siguiente materia
+            if (juego.AvanzarMateria())
+            {
+                // Reiniciar preguntas para nueva materia
+                MostrarPreguntaActual();
+            }
+            else
+            {
+                // Ya no hay más materias, ir a resultados finales
+                FormResultados formResultados = new FormResultados(juego);
+                formResultados.Show();
+                this.Hide(); // Opcional: ocultar el formulario actual
+            }
         }
+
         private void FormPregunta_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -118,6 +129,10 @@ namespace JuegoJIAv2
         {
             int formWidth = this.ClientSize.Width;
             int formHeight = this.ClientSize.Height;
+
+            lblmateria.Left = (formWidth / 2) - (lblmateria.Width / 2);
+            lblmateria.Top = formHeight / 4 - lblContador.Height - 20;
+
             lblContador.Left = (formWidth / 2) - (lblContador.Width / 2);
             lblContador.Top = formHeight / 4;
 

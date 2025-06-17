@@ -40,23 +40,24 @@ namespace JuegoJIAv2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (lstMaterias.SelectedIndex == -1)
+            if (lstMaterias.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Por favor, selecciona una materia para continuar.",
+                MessageBox.Show("Por favor, selecciona al menos una materia para continuar.",
                 "Selección requerida", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
                 return;
             }
- 
-            // Seleccionar la materia en el juego
-            //lstMaterias.SelectedIndex = i;
+
+            // Agregar todas las materias seleccionadas
+            juego.JugadorActual.MateriaSeleccionada.Clear();
+            foreach (string nombreMateria in lstMaterias.SelectedItems)
+            {
+                Materia materia = juego.Materias.Find(m => m.Nombre == nombreMateria);
+                juego.JugadorActual.SeleccionMateria(materia);
+            }
+
             juego.JugadorActual.indiceMateria = 0;
-            MessageBox.Show("Por favor, selecciona una materia para continuar."+ juego.JugadorActual.indiceMateria,
-                "Selección requerida", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            juego.SeleccionarMateria(lstMaterias.SelectedIndex);
-            // Preparar el cuestionario
-            juego.PrepararCuestionario();
+            juego.PrepararCuestionario(); // Preparará la primera materia
             // Abrir el formulario de preguntas
             FormPregunta formPregunta = new FormPregunta(juego);
             formPregunta.Show();

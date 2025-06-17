@@ -48,7 +48,7 @@
             lstMaterias.FormattingEnabled = true;
             lstMaterias.Location = new Point(163, 96);
             lstMaterias.Name = "lstMaterias";
-            lstMaterias.SelectionMode = SelectionMode.MultiSimple;
+            lstMaterias.SelectionMode = SelectionMode.MultiExtended;
             lstMaterias.Size = new Size(1132, 388);
             lstMaterias.TabIndex = 1;
             // 

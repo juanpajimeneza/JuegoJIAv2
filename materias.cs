@@ -29,7 +29,17 @@ namespace JuegoJIAv2
             PreguntaActualIndex = 0;
             InicializarMaterias();
         }
-
+        public bool AvanzarMateria()
+        {
+            
+            JugadorActual.indiceMateria++;
+            if (JugadorActual.indiceMateria < JugadorActual.MateriaSeleccionada.Count)
+            {
+                PrepararCuestionario(); // cargar nueva materia
+                return true;
+            }
+            return false;
+        }
         public void Iniciar(string nombreJugador)
         {
             EstaActivo = true;
@@ -52,8 +62,15 @@ namespace JuegoJIAv2
         {
             if (JugadorActual.MateriaSeleccionada.Count == 0)
                 return;
-            Materia materiaSeleccionada = JugadorActual.MateriaSeleccionada[0];
-            PreguntasSeleccionadas = aleatorizador.Aleatorizar(materiaSeleccionada.GetPreguntas()).Take(10).ToList();
+
+            // ✅ USAR el índice actual, no siempre 0
+            Materia materiaSeleccionada = JugadorActual.MateriaSeleccionada[JugadorActual.indiceMateria];
+
+            PreguntasSeleccionadas = aleatorizador
+                .Aleatorizar(materiaSeleccionada.GetPreguntas())
+                .Take(10)
+                .ToList();
+
             PreguntaActualIndex = 0;
         }
 

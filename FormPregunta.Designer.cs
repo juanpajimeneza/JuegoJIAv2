@@ -36,6 +36,7 @@
             rbOpcion4 = new RadioButton();
             btnConfirmar = new Button();
             pnlOpciones = new Panel();
+            lblmateria = new Label();
             pnlOpciones.SuspendLayout();
             SuspendLayout();
             // 
@@ -122,11 +123,21 @@
             pnlOpciones.Size = new Size(1082, 200);
             pnlOpciones.TabIndex = 7;
             // 
+            // lblmateria
+            // 
+            lblmateria.AutoSize = true;
+            lblmateria.Location = new Point(191, 38);
+            lblmateria.Name = "lblmateria";
+            lblmateria.Size = new Size(78, 32);
+            lblmateria.TabIndex = 8;
+            lblmateria.Text = "label1";
+            // 
             // FormPregunta
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1342, 608);
+            Controls.Add(lblmateria);
             Controls.Add(pnlOpciones);
             Controls.Add(btnConfirmar);
             Controls.Add(lblPregunta);
@@ -152,5 +163,6 @@
         private RadioButton rbOpcion4;
         private Button btnConfirmar;
         private Panel pnlOpciones;
+        private Label lblmateria;
     }
 }

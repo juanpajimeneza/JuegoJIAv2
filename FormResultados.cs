@@ -22,24 +22,29 @@ namespace JuegoJIAv2
         }
         private void MostrarResultados()
         {
-            int posicion = juego.JugadorActual.indiceMateria+1;
-            string[] resultados = juego.ObtenerResultados(juego.JugadorActual.indiceMateria);
-            lblNombre.Text = $"Jugador: {resultados[0]}";
-            lblMateria.Text = $"Materia: {resultados[1]}";
-            lblPuntaje.Text = $"Puntaje final: {resultados[2]}/{100*posicion}";
-            lblRespuestasCorrectas.Text = $"Respuestas correctas:{int.Parse(resultados[2]) / 10}/ {10*posicion}";
-            lblResultado.Text = resultados[3];
+            int materiasRespondidas = juego.JugadorActual.MateriaSeleccionada.Count;
+            int puntajeTotal = juego.JugadorActual.Puntaje;
+            int respuestasCorrectas = puntajeTotal / 10;
+            int totalPreguntas = materiasRespondidas * 10;
+            int puntajeMaximo = materiasRespondidas * 100;
 
-            // Cambiar el color según el resultado
-            if (int.Parse(resultados[2]) >= 60)
+            lblNombre.Text = $"Jugador: {juego.JugadorActual.Nombre}";
+            lblMateria.Text = $"Materias respondidas: {materiasRespondidas}";
+            lblPuntaje.Text = $"Puntaje final: {puntajeTotal}/{puntajeMaximo}";
+            lblRespuestasCorrectas.Text = $"Respuestas correctas: {respuestasCorrectas}/{totalPreguntas}";
+
+            if (puntajeTotal > 750)
             {
+                lblResultado.Text = "¡Aprobado!";
                 lblResultado.ForeColor = Color.Green;
             }
             else
             {
+                lblResultado.Text = "No aprobado";
                 lblResultado.ForeColor = Color.Red;
             }
         }
+
 
         private void btnJugarDeNuevo_Click(object sender, EventArgs e)
         {

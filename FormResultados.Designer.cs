@@ -102,6 +102,7 @@
             btnJugarDeNuevo.TabIndex = 6;
             btnJugarDeNuevo.Text = "Jugar de nuevo";
             btnJugarDeNuevo.UseVisualStyleBackColor = true;
+            btnJugarDeNuevo.Visible = false;
             btnJugarDeNuevo.Click += btnJugarDeNuevo_Click_1;
             // 
             // btnSalir
