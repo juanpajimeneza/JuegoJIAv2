@@ -11,12 +11,14 @@ namespace JuegoJIAv2
     {
         public string Nombre { get; set; }
         public int Puntaje { get; set; }
+        public int indiceMateria { get; set; }
         public List<Materia> MateriaSeleccionada { get; set; }
 
         public Jugador(string nombre)
         {
             Nombre = nombre;
             Puntaje = 0;
+            indiceMateria = 0;
             MateriaSeleccionada = new List<Materia>();
         }
 

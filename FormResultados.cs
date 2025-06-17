@@ -22,11 +22,12 @@ namespace JuegoJIAv2
         }
         private void MostrarResultados()
         {
-            string[] resultados = juego.ObtenerResultados();
+            int posicion = juego.JugadorActual.indiceMateria+1;
+            string[] resultados = juego.ObtenerResultados(juego.JugadorActual.indiceMateria);
             lblNombre.Text = $"Jugador: {resultados[0]}";
             lblMateria.Text = $"Materia: {resultados[1]}";
-            lblPuntaje.Text = $"Puntaje final: {resultados[2]}/100";
-            lblRespuestasCorrectas.Text = $"Respuestas correctas:{int.Parse(resultados[2]) / 10}/ 10";
+            lblPuntaje.Text = $"Puntaje final: {resultados[2]}/{100*posicion}";
+            lblRespuestasCorrectas.Text = $"Respuestas correctas:{int.Parse(resultados[2]) / 10}/ {10*posicion}";
             lblResultado.Text = resultados[3];
 
             // Cambiar el color según el resultado
@@ -65,13 +66,31 @@ namespace JuegoJIAv2
 
         private void btnJugarDeNuevo_Click_1(object sender, EventArgs e)
         {
-            juego.Iniciar(juego.JugadorActual.Nombre);
+            //juego.Iniciar(juego.JugadorActual.Nombre);
             // Abrir el formulario de selección de materia
             // Abrir el formulario de preguntas
-            FormSeleccionMateria formSeleccion = new
-            FormSeleccionMateria(juego);
-            formSeleccion.Show();
+
+            //juego.SeleccionarMateria(indiceMateria);
+            //Text selmateria = juego.JugadorActual.MateriaSeleccionada.;
+            //FormSeleccionMateria formSeleccion = new
+            //FormSeleccionMateria(juego);
+            //formSeleccion.Show();
+            //this.Hide();
+
+            //juego.JugadorActual.indiceMateria++;
+            Materia materiasel = juego.JugadorActual.MateriaSeleccionada[juego.JugadorActual.indiceMateria++];
+            juego.SeleccionarMateria(juego.JugadorActual.MateriaSeleccionada.IndexOf(materiasel));
+            //juego.JugadorActual.MateriaSeleccionada.Remove(juego.JugadorActual.MateriaSeleccionada[0]);
+            //Materia materiat=juego.JugadorActual.MateriaSeleccionada[0];
+
+            // Preparar el cuestionario
+            //juego.JugadorActual.indiceMateria = juego.JugadorActual.MateriaSeleccionada.IndexOf(materiat);
+            juego.PrepararCuestionario();
+            // Abrir el formulario de preguntas
+            FormPregunta formPregunta = new FormPregunta(juego);
+            formPregunta.Show();
             this.Hide();
+
         }
     }
 }

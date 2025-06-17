@@ -93,7 +93,7 @@ namespace JuegoJIAv2
         }
 
         // Método para obtener los resultados finales
-        public string[] ObtenerResultados()
+        public string[] ObtenerResultados(int indice)
         {
             string[] resultados = new string[4];
             resultados[0] = JugadorActual.Nombre;

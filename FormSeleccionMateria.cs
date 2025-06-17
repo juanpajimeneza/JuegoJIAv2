@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,6 +50,10 @@ namespace JuegoJIAv2
  
             // Seleccionar la materia en el juego
             //lstMaterias.SelectedIndex = i;
+            juego.JugadorActual.indiceMateria = 0;
+            MessageBox.Show("Por favor, selecciona una materia para continuar."+ juego.JugadorActual.indiceMateria,
+                "Selección requerida", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
             juego.SeleccionarMateria(lstMaterias.SelectedIndex);
             // Preparar el cuestionario
             juego.PrepararCuestionario();
