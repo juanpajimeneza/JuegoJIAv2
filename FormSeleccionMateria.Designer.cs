@@ -68,9 +68,9 @@
             lblnota.AutoSize = true;
             lblnota.Location = new Point(165, 512);
             lblnota.Name = "lblnota";
-            lblnota.Size = new Size(523, 32);
+            lblnota.Size = new Size(961, 32);
             lblnota.TabIndex = 3;
-            lblnota.Text = "Puntaje minimo es 750 (cada materia te da 100)";
+            lblnota.Text = "Puntaje minimo es 750 (cada materia te da 100, por favor, seleccione minimo 8 materias)";
             lblnota.Click += label1_Click_1;
             // 
             // FormSeleccionMateria
