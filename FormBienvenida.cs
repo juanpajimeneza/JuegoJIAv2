@@ -25,11 +25,14 @@ namespace JuegoJIAv2
             // Iniciar el juego con el nombre del jugador
 
             juego.Iniciar(nombre);
+            // Abrir el formulario de historia
+            FormHistoria formHistoria = new FormHistoria(juego);
+            formHistoria.Show();
             // Abrir el formulario de selección de materia
-            FormSeleccionMateria formSeleccion = new
-            FormSeleccionMateria(juego);
-            formSeleccion.Show();
-            this.Hide();
+            //FormSeleccionMateria formSeleccion = new
+            //FormSeleccionMateria(juego);
+            //formSeleccion.Show();
+            //this.Hide();
         }
 
         private void FormBienvenida_Load(object sender, EventArgs e)

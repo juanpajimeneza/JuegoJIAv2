@@ -74,9 +74,10 @@ namespace JuegoJIAv2
 
             if (indiceRespuesta == -1)
             {
-                MessageBox.Show("Por favor, selecciona una respuesta.",
-                "Selección requerida", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                //lblestado.Text = "Por favor, selecciona una respuesta.";
+                //MessageBox.Show("Por favor, selecciona una respuesta.",
+                //"Selección requerida", MessageBoxButtons.OK,
+                //MessageBoxIcon.Information);
                 return;
             }
 
@@ -86,10 +87,19 @@ namespace JuegoJIAv2
             // Mostrar retroalimentación
             string mensaje = esCorrecta ? "¡Correcto! +10 puntos" :
             "Incorrecto.";
-            MessageBox.Show(mensaje, "Resultado",
-            MessageBoxButtons.OK,
-            esCorrecta ? MessageBoxIcon.Information :
-            MessageBoxIcon.Warning);
+            if (esCorrecta)
+            {
+                lblestado.ForeColor = Color.Green;
+            }
+            else
+            {
+                lblestado.ForeColor = Color.Red;
+            }
+            lblestado.Text = mensaje;
+            //MessageBox.Show(mensaje, "Resultado",
+            //MessageBoxButtons.OK,
+            //esCorrecta ? MessageBoxIcon.Information :
+            //MessageBoxIcon.Warning);
 
             // Verificar si el cuestionario ha terminado
             if (juego.CuestionarioTerminado())
@@ -142,8 +152,11 @@ namespace JuegoJIAv2
             pnlOpciones.Left = (formWidth / 2) - (pnlOpciones.Width / 2);
             pnlOpciones.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20);
 
+            lblestado.Left = (formWidth / 2) - (lblestado.Width / 2);
+            lblestado.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20 + pnlOpciones.Height + 20);
+
             btnConfirmar.Left = (formWidth / 2) - (btnConfirmar.Width / 2);
-            btnConfirmar.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20 + pnlOpciones.Height + 20);
+            btnConfirmar.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20 + pnlOpciones.Height + 20 + lblestado.Height + 20);
         }
 
         private void FormPregunta_FormClosed_1(object sender, FormClosedEventArgs e)
@@ -168,9 +181,34 @@ namespace JuegoJIAv2
             pnlOpciones.Left = (formWidth / 2) - (pnlOpciones.Width / 2);
             pnlOpciones.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20);
 
-            btnConfirmar.Left = (formWidth / 2) - (btnConfirmar.Width / 2);
-            btnConfirmar.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20 + pnlOpciones.Height + 20);
+            lblestado.Left = (formWidth / 2) - (lblestado.Width / 2);
+            lblestado.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20 + pnlOpciones.Height + 20);
 
+            btnConfirmar.Left = (formWidth / 2) - (btnConfirmar.Width / 2);
+            btnConfirmar.Top = (formHeight / 4) + (lblContador.Height + 20 + lblPregunta.Height + 20 + pnlOpciones.Height + 20 + lblestado.Height + 20);
+
+        }
+
+        private void rbOpcion1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            btnConfirmar_Click(sender, e);
+
+        }
+
+        private void rbOpcion2_CheckedChanged(object sender, EventArgs e)
+        {
+            btnConfirmar_Click(sender, e);
+        }
+
+        private void rbOpcion3_CheckedChanged(object sender, EventArgs e)
+        {
+            btnConfirmar_Click(sender, e);
+        }
+
+        private void rbOpcion4_CheckedChanged(object sender, EventArgs e)
+        {
+            btnConfirmar_Click(sender, e);
         }
     }
 }

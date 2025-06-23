@@ -37,6 +37,7 @@
             btnConfirmar = new Button();
             pnlOpciones = new Panel();
             lblmateria = new Label();
+            lblestado = new Label();
             pnlOpciones.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             rbOpcion1.TabStop = true;
             rbOpcion1.Text = "radioButton1";
             rbOpcion1.UseVisualStyleBackColor = true;
+            rbOpcion1.CheckedChanged += rbOpcion1_CheckedChanged;
             // 
             // rbOpcion2
             // 
@@ -79,6 +81,7 @@
             rbOpcion2.TabStop = true;
             rbOpcion2.Text = "radioButton2";
             rbOpcion2.UseVisualStyleBackColor = true;
+            rbOpcion2.CheckedChanged += rbOpcion2_CheckedChanged;
             // 
             // rbOpcion3
             // 
@@ -90,6 +93,7 @@
             rbOpcion3.TabStop = true;
             rbOpcion3.Text = "radioButton3";
             rbOpcion3.UseVisualStyleBackColor = true;
+            rbOpcion3.CheckedChanged += rbOpcion3_CheckedChanged;
             // 
             // rbOpcion4
             // 
@@ -101,6 +105,7 @@
             rbOpcion4.TabStop = true;
             rbOpcion4.Text = "radioButton4";
             rbOpcion4.UseVisualStyleBackColor = true;
+            rbOpcion4.CheckedChanged += rbOpcion4_CheckedChanged;
             // 
             // btnConfirmar
             // 
@@ -132,11 +137,21 @@
             lblmateria.TabIndex = 8;
             lblmateria.Text = "label1";
             // 
+            // lblestado
+            // 
+            lblestado.AutoSize = true;
+            lblestado.Location = new Point(191, 428);
+            lblestado.Name = "lblestado";
+            lblestado.Size = new Size(78, 32);
+            lblestado.TabIndex = 9;
+            lblestado.Text = "label1";
+            // 
             // FormPregunta
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1342, 608);
+            Controls.Add(lblestado);
             Controls.Add(lblmateria);
             Controls.Add(pnlOpciones);
             Controls.Add(btnConfirmar);
@@ -165,5 +180,6 @@
         private Button btnConfirmar;
         private Panel pnlOpciones;
         private Label lblmateria;
+        private Label lblestado;
     }
 }
